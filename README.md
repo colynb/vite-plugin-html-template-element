@@ -14,7 +14,7 @@ Add the plugin to your Vite configuration:
 
 ```javascript
 import { defineConfig } from "vite";
-import htmlTemplatePlugin from "vite-plugin-html-template-element";
+import htmlTemplateElementPlugin from "vite-plugin-html-template-element";
 
 export default defineConfig({
   plugins: [htmlTemplateElementPlugin()],
