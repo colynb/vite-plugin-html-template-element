@@ -31,4 +31,4 @@ document.body.appendChild(template.content.cloneNode(true));
 
 ## License
 
-MIT. This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT. This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
