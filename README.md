@@ -2,9 +2,9 @@
 
 A Vite plugin to import HTML files as `HTMLTemplateElement`.
 
-## Work in Progress
+## //// Work in Progress ////
 
-This works well in dev mode but I am still working on the build process. When running `vite build` it seems Rollup is unaware of the declaration for `*.html` file imports and I am in the process of working that out. I am open to suggestions. Thank you!
+This works well in dev mode but I am still working on the build process. When running `vite build` it seems Rollup is unaware of the declaration for `*.html` file imports and I am in the process of working that out. I am open to suggestions and would really love some help. Thank you!
 
 ## Installation
 
