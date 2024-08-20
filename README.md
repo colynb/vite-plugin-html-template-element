@@ -24,9 +24,9 @@ export default defineConfig({
 Then you can import HTML files as templates:
 
 ```typescript
-import template from "./template.html";
+import myTemplate from "./my-template.tpl";
 
-document.body.appendChild(template.content.cloneNode(true));
+document.body.appendChild(myTemplate.content.cloneNode(true));
 ```
 
 ### Required type declarations
