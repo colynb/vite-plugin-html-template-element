@@ -1,10 +1,6 @@
 # vite-plugin-html-template-element
 
-A Vite plugin to import HTML files as `HTMLTemplateElement`.
-
-## //// Work in Progress ////
-
-This works well in dev mode but I am still working on the build process. When running `vite build` it seems Rollup is unaware of the declaration for `*.html` file imports and I am in the process of working that out. I am open to suggestions and would really love some help. Thank you!
+A Vite plugin to import HTML (`*.tpl`) files as `HTMLTemplateElement`.
 
 ## Installation
 
@@ -35,10 +31,10 @@ document.body.appendChild(template.content.cloneNode(true));
 
 ### Required type declarations
 
-A note on type declarations. For typescript to recognize the import of `../.html` files, I included a declaration in the src folder and attempted to include it in the bundle so that you do not have to. However, I can't seem to get that to work. If this is an issue for you, you will have to add the following to your types yourself. If you know how to fix this, please let me know or if you want, submit a PR. Thanks!
+Include the following declaration to typescript to recognize .tpl files.
 
 ```typescript
-declare module "*.html" {
+declare module "*.tpl" {
   const template: HTMLTemplateElement;
   export default template;
 }

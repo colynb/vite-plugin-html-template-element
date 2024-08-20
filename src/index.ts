@@ -1,21 +1,25 @@
-import fs from "fs";
+import * as fs from "fs";
 
-export default function htmlTemplateElementPlugin() {
+import { Plugin } from "vite";
+
+function htmlTemplateElementPlugin(): Plugin {
   return {
-    name: "vite-plugin-html-template",
-    transform(code: string, id: string) {
-      if (id.endsWith(".html")) {
+    name: "vite-plugin-html-template-element",
+    load(id) {
+      if (id.endsWith(".tpl")) {
         const htmlContent = fs.readFileSync(id, "utf-8");
         const jsCode = `
-          const template = document.createElement('template');
-          template.innerHTML = \`${htmlContent}\`;
-          export default template;
+const template = document.createElement('template');
+template.innerHTML = \`${htmlContent.trim()}\`;
+export default template;
         `;
         return {
-          code: jsCode,
+          code: jsCode.trim(),
           map: null, // provide source map if needed
         };
       }
     },
   };
 }
+
+export default htmlTemplateElementPlugin;
