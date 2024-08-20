@@ -26,12 +26,22 @@ Then you can import HTML files as templates:
 ```typescript
 import myTemplate from "./my-template.tpl";
 
-document.body.appendChild(myTemplate.content.cloneNode(true));
+customElements.define(
+  "my-custom-element",
+  class extends HTMLElement {
+    constructor() {
+      super();
+
+      const shadowRoot = this.attachShadow({ mode: "open" });
+      shadowRoot.appendChild(myTemplate.content.cloneNode(true));
+    }
+  }
+);
 ```
 
 ### Required type declarations
 
-Include the following declaration to typescript to recognize .tpl files.
+Include the following declaration for typescript to recognize .tpl files.
 
 ```typescript
 declare module "*.tpl" {
